@@ -2,8 +2,6 @@
 *.iws
 .gradle
 .idea
-/.idea/workspace.xml
-/.idea/libraries
 .DS_Store
 /build
 /captures
@@ -13,4 +11,3 @@ local.properties
 release.properties
 project.properties
 .gitignore
-.idea/
