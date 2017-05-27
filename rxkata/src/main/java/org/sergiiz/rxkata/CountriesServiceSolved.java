@@ -15,10 +15,12 @@ class CountriesServiceSolved implements CountriesService {
         return Single.just(country.getName().toUpperCase(Locale.US));
     }
 
+    @Override
     public Single<Integer> countCountries(List<Country> countries) {
         return Single.just(countries.size());
     }
 
+    @Override
     public Observable<Long> listPopulationOfEachCountry(List<Country> countries) {
         return null; // put your solution here;
     }
