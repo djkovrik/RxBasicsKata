@@ -1,12 +1,11 @@
 package org.sergiiz.rxkata;
 
+import io.reactivex.Observable;
+import io.reactivex.Single;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.FutureTask;
-
-import io.reactivex.Observable;
-import io.reactivex.Single;
 
 class CountriesServiceSolved implements CountriesService {
 
@@ -28,7 +27,8 @@ class CountriesServiceSolved implements CountriesService {
 
     @Override
     public Observable<String> listNameOfEachCountry(List<Country> countries) {
-        return null; // put your solution here
+        return Observable.fromIterable(countries)
+            .map(Country::getName);
     }
 
     @Override
