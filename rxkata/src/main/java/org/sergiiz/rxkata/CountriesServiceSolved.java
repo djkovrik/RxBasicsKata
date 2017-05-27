@@ -1,6 +1,7 @@
 package org.sergiiz.rxkata;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.FutureTask;
 
@@ -11,7 +12,7 @@ class CountriesServiceSolved implements CountriesService {
 
     @Override
     public Single<String> countryNameInCapitals(Country country) {
-        return null; // put your solution here
+        return Single.just(country.getName().toUpperCase(Locale.US));
     }
 
     public Single<Integer> countCountries(List<Country> countries) {
