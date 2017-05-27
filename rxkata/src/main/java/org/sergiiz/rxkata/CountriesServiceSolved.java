@@ -16,7 +16,7 @@ class CountriesServiceSolved implements CountriesService {
     }
 
     public Single<Integer> countCountries(List<Country> countries) {
-        return null; // put your solution here
+        return Single.just(countries.size());
     }
 
     public Observable<Long> listPopulationOfEachCountry(List<Country> countries) {
