@@ -22,7 +22,8 @@ class CountriesServiceSolved implements CountriesService {
 
     @Override
     public Observable<Long> listPopulationOfEachCountry(List<Country> countries) {
-        return null; // put your solution here;
+        return Observable.fromIterable(countries)
+            .map(Country::getPopulation);
     }
 
     @Override
