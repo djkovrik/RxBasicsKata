@@ -46,7 +46,8 @@ class CountriesServiceSolved implements CountriesService {
 
     @Override
     public Observable<Country> listPopulationMoreThanOneMillion(List<Country> countries) {
-        return null; // put your solution here
+        return Observable.fromIterable(countries)
+            .filter(country -> country.getPopulation() > 1000000);
     }
 
     @Override
