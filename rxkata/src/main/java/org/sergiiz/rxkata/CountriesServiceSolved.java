@@ -33,7 +33,9 @@ class CountriesServiceSolved implements CountriesService {
 
     @Override
     public Observable<Country> listOnly3rdAnd4thCountry(List<Country> countries) {
-        return null; // put your solution here
+        return Observable.fromIterable(countries)
+            .skip(2)
+            .take(2);
     }
 
     @Override
