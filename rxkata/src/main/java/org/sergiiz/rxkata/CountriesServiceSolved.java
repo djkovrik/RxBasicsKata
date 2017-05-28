@@ -62,7 +62,11 @@ class CountriesServiceSolved implements CountriesService {
 
     @Override
     public Observable<String> getCurrencyUsdIfNotFound(String countryName, List<Country> countries) {
-        return null; // put your solution here
+        return Observable.fromIterable(countries)
+            .filter(country -> country.getName().equals(countryName))
+            .map(Country::getCurrency)
+            .defaultIfEmpty("USD");
+
     }
 
     @Override
