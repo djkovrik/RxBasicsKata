@@ -71,7 +71,11 @@ class CountriesServiceSolved implements CountriesService {
 
     @Override
     public Observable<Long> sumPopulationOfCountries(List<Country> countries) {
-        return null; // put your solution here
+        return Observable.fromIterable(countries)
+            .map(Country::getPopulation)
+            .reduce((aLong, aLong2) -> aLong + aLong2)
+            .toObservable();
+
     }
 
     @Override
